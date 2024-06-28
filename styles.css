@@ -11,7 +11,8 @@ body {
 
 .container {
   background-color: white;
-  width: min(90%, 450px); /* Adjusted width value */
+  width: 90%; /* fallback for older browsers */
+  max-width: 450px; /* maximum width */
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -30,6 +31,9 @@ input {
   padding: 1em 0.5em;
   color: rgb(118, 109, 120);
   border: 2px solid rgb(141, 137, 140);
+  font-size: 1em;
+  outline: none;
+  border-radius: 0.5em;
 }
 
 input:focus {
@@ -39,10 +43,6 @@ input:focus {
 button {
   background-color: rgb(134, 70, 193);
   color: blanchedalmond;
-}
-
-input,
-button {
   font-size: 1em;
   outline: none;
   border-radius: 0.5em;
@@ -65,9 +65,4 @@ button {
 
 #output span {
   font-size: 0.9em;
-}
-
-/* Corrected specificity order */
-input:focus {
-  /* Styles for input when focused */
 }

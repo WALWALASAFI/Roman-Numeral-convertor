@@ -17,7 +17,7 @@ function convertToRoman(num) {
   ];
 
   let romanNumeral = '';
-  for (let i = 0; i < romanValues.length; i++) {
+  for (let i = 0; i < romanValues.length; i += 1) { // Refactored here
     while (num >= romanValues[i].value) {
       romanNumeral += romanValues[i].numeral;
       num -= romanValues[i].value;
@@ -25,30 +25,3 @@ function convertToRoman(num) {
   }
   return romanNumeral;
 }
-
-document.getElementById('convert-btn').addEventListener('click', () => {
-  const numberInput = document.getElementById('number').value.trim();
-  const outputElement = document.getElementById('output');
-
-  // Validate input
-  if (numberInput === '') {
-    outputElement.textContent = 'Please enter a valid number';
-    return;
-  }
-
-  const number = parseInt(numberInput, 10);
-
-  if (Number.isNaN(number) || number < 1) {
-    outputElement.textContent = 'Please enter a number greater than or equal to 1';
-    return;
-  }
-
-  if (number >= 4000) {
-    outputElement.textContent = 'Please enter a number less than or equal to 3999';
-    return;
-  }
-
-  // Convert number to Roman numeral
-  const romanNumeral = convertToRoman(number);
-  outputElement.textContent = romanNumeral;
-});
