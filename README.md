@@ -9,11 +9,11 @@ Features:
 Error Handling: Typically includes validation to ensure correct input formats and ranges.
 User-Friendly Interface: Provides clear instructions and feedback for users.
 
-✔👌Demo link(https://walwalasafi.github.io/Palindrome-checker-project/)
+✔👌Demo link(https://walwalasafi.github.io/Roman-Numeral-convertor/)
 
 
 Demo 📸
-![Screenshot](image/SharedScreenshot.jpg)
+![image](image/SharedScreenshot.jpg)
 
 Technologies Used 🛠️
 🔹HTML
