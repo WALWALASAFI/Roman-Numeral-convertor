@@ -1,52 +1,54 @@
-let input = document.getElementById("input") ;
-let button = document.getElementById("submit") ;
-let errorMessage = document.getElementById("error") ;
-let output = document.getElementById("output") ;
+document.getElementById('convert-btn').addEventListener('click', function() {
+	var numberInput = document.getElementById('number').value.trim();
+	var outputElement = document.getElementById('output');
 
-const romanObject = {
-	M: 1000,
-	CM: 900,
-	D: 500,
-	CD: 400,
-	C: 100,
-	XC: 90,
-	L: 50,
-	XL: 40,
-	XXX: 30,
-	XX: 20,
-	X: 10,
-	IX: 9,
-	V: 5,
-	IV: 4,
-	I: 1,
-};
+	// Validate input
+	if (numberInput === '') {
+		outputElement.textContent = "Please enter a valid number";
+		return;
+	}
 
-button.addEventListener("click", () => {
-	inputToRoman(input.value);
-	input.value = "";
+	var number = parseInt(numberInput, 10);
+
+	if (isNaN(number) || number < 1) {
+		outputElement.textContent = "Please enter a number greater than or equal to 1";
+		return;
+	}
+
+	if (number >= 4000) {
+		outputElement.textContent = "Please enter a number less than or equal to 3999";
+		return;
+	}
+
+	// Convert number to Roman numeral
+	var romanNumeral = convertToRoman(number);
+	outputElement.textContent = romanNumeral;
 });
 
-function inputToRoman(num) {
-	let number = parseInt(num) ;
+// Function to convert Arabic number to Roman numeral
+function convertToRoman(num) {
+	var romanValues = [
+		{ value: 1000, numeral: 'M' },
+		{ value: 900, numeral: 'CM' },
+		{ value: 500, numeral: 'D' },
+		{ value: 400, numeral: 'CD' },
+		{ value: 100, numeral: 'C' },
+		{ value: 90, numeral: 'XC' },
+		{ value: 50, numeral: 'L' },
+		{ value: 40, numeral: 'XL' },
+		{ value: 10, numeral: 'X' },
+		{ value: 9, numeral: 'IX' },
+		{ value: 5, numeral: 'V' },
+		{ value: 4, numeral: 'IV' },
+		{ value: 1, numeral: 'I' }
+	];
 
-	if (num .trim().length == 0){
-		errorMessage.innerHTML = "Invalid input";
-		return false;
+	var romanNumeral = '';
+	for (var i = 0; i < romanValues.length; i++) {
+		while (num >= romanValues[i].value) {
+			romanNumeral += romanValues[i].numeral;
+			num -= romanValues[i].value;
+		}
 	}
-	if (number > 4999 || number < 1 ) {
-		errorMessage.innerHTML = "Input Out Of Range";
-		return false;
-	}
-	errorMessage.innerHTML = "";
-	output.innerHTML = "";
-
-	let result = "";
-	let romanValues = object.keys(romanObject);
-	romanValues.forEach((key) => {
-		while (romanObject[key] <= number) {
-			number -= romanObject[key];
-			result += key;
-		}	
-	});
-	output.innerHTML = result;
+	return romanNumeral;
 }
