@@ -1,4 +1,4 @@
-document.getElementById('convert-btn').addEventListener('click', () => {
+function handleClick() {
   // Get the value from input
   const numberInput = document.getElementById('number').value.trim();
 
@@ -16,7 +16,10 @@ document.getElementById('convert-btn').addEventListener('click', () => {
     // Convert number to Roman numeral
     document.getElementById('output').textContent = convertToRoman(number);
   }
-});
+}
+
+// Now you can safely use convertToRoman function here
+document.getElementById('convert-btn').addEventListener('click', handleClick);
 
 // Function to convert number to Roman numeral
 function convertToRoman(num) {
