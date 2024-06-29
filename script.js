@@ -1,4 +1,4 @@
-document.getElementById('convert-btn').addEventListener('click', function handleClick() {
+document.getElementById('convert-btn').addEventListener('click', () => {
   // Get the value from input
   const numberInput = document.getElementById('number').value.trim();
 
@@ -33,12 +33,12 @@ function convertToRoman(num) {
     { value: 9, numeral: 'IX' },
     { value: 5, numeral: 'V' },
     { value: 4, numeral: 'IV' },
-    { value: 1, numeral: 'I' }
+    { value: 1, numeral: 'I' },
   ];
 
   let romanNumeral = '';
 
-  for (let i = 0; i < romanNumeralsMap.length; i++) {
+  for (let i = 0; i < romanNumeralsMap.length; i += 1) {
     while (num >= romanNumeralsMap[i].value) {
       romanNumeral += romanNumeralsMap[i].numeral;
       num -= romanNumeralsMap[i].value;
