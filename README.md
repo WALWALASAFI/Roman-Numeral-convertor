@@ -13,7 +13,7 @@ User-Friendly Interface: Provides clear instructions and feedback for users.
 
 
 Demo 📸
-![image](image/SharedScreenshot.jpg)
+![image](image/image.jpg)
 
 Technologies Used 🛠️
 🔹HTML
