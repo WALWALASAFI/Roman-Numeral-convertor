@@ -1,12 +1,12 @@
-document.getElementById('convert-btn').addEventListener('click', function() {
+document.getElementById('convert-btn').addEventListener('click', function () {
   // Get the value from input
-  var numberInput = document.getElementById('number').value.trim();
+  const numberInput = document.getElementById('number').value.trim();
 
   // Convert the input to a number
-  var number = parseInt(numberInput, 10); // Added radix parameter
+  const number = parseInt(numberInput, 10); // Added radix parameter
 
   // Validate the number and generate Roman numeral accordingly
-  if (isNaN(number)) {
+  if (Number.isNaN(number)) {
     document.getElementById('output').textContent = 'Please enter a valid number';
   } else if (number < 1) {
     document.getElementById('output').textContent = 'Please enter a number greater than or equal to 1';
@@ -20,8 +20,7 @@ document.getElementById('convert-btn').addEventListener('click', function() {
 
 // Function to convert number to Roman numeral
 function convertToRoman(num) {
-  var romanNumeral = '';
-  var romanNumeralsMap = [
+  const romanNumeralsMap = [
     { value: 1000, numeral: 'M' },
     { value: 900, numeral: 'CM' },
     { value: 500, numeral: 'D' },
@@ -37,7 +36,9 @@ function convertToRoman(num) {
     { value: 1, numeral: 'I' }
   ];
 
-  for (var i = 0; i < romanNumeralsMap.length; i++) {
+  let romanNumeral = '';
+
+  for (let i = 0; i < romanNumeralsMap.length; i++) {
     while (num >= romanNumeralsMap[i].value) {
       romanNumeral += romanNumeralsMap[i].numeral;
       num -= romanNumeralsMap[i].value;
