@@ -6,6 +6,8 @@ Education and Learning: Useful for students learning about Roman numerals in his
 Practical Applications: Helps in understanding and interpreting historical documents, clocks, and other artifacts that use Roman numerals.
 Programming and Development: Often integrated into software development for tasks involving Roman numeral conversions, such as in financial software or historical data processing.
 Features:
+Error Handling: Typically includes validation to ensure correct input formats and ranges.
+User-Friendly Interface: Provides clear instructions and feedback for users.
 
 ✔👌Demo link(https://walwalasafi.github.io/Roman-Numeral-convertor/)
 
