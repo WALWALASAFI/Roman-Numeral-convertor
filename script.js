@@ -18,7 +18,7 @@ function convertToRoman(num) {
 
   let romanNumeral = '';
 
-  for (let i = 0; i < romanNumeralsMap.length; i++) {
+  for (let i = 0; i < romanNumeralsMap.length; i += 1) {
     while (num >= romanNumeralsMap[i].value) {
       romanNumeral += romanNumeralsMap[i].numeral;
       num -= romanNumeralsMap[i].value;
@@ -28,8 +28,8 @@ function convertToRoman(num) {
   return romanNumeral;
 }
 
-// Event listener setup
-document.getElementById('convert-btn').addEventListener('click', function() {
+// Event listener setup using arrow function
+document.getElementById('convert-btn').addEventListener('click', () => {
   // Get the value from input
   const numberInput = document.getElementById('number').value.trim();
 
