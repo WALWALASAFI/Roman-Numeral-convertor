@@ -1,4 +1,4 @@
-document.getElementById('convert-btn').addEventListener('click', function () {
+document.getElementById('convert-btn').addEventListener('click', function handleClick() {
   // Get the value from input
   const numberInput = document.getElementById('number').value.trim();
 
